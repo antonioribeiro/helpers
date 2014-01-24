@@ -21,7 +21,7 @@
 
 namespace PragmaRX\Helpers;
 
-use PragmaRX\Helpers\Support\Config;
+use PragmaRX\Support\Config;
 
 class Helpers
 {
@@ -39,7 +39,6 @@ class Helpers
             /// what to do when booting?
         }
     }
-
 
     public function varFormat($v) // pretty-print var_export 
     { 
