@@ -3,13 +3,6 @@
 use PragmaRX\Helpers\Helpers;
 
 use PragmaRX\Helpers\Support\Config;
-use PragmaRX\Helpers\Support\FileSystem;
-
-use PragmaRX\Helpers\Data\Repositories\RepositoryExample;
-
-use PragmaRX\Helpers\Data\RepositoryManager;
-
-use PragmaRX\Helpers\Vendor\Laravel\Models\ModelExample;
 
 use Illuminate\Support\ServiceProvider as IlluminateServiceProvider;
 use Illuminate\Foundation\AliasLoader as IlluminateAliasLoader;
@@ -54,8 +47,6 @@ class ServiceProvider extends IlluminateServiceProvider {
     {   
         $this->registerConfig();
 
-        $this->registerRepositories();
-
         $this->registerHelpers();
     }
 
@@ -81,21 +72,7 @@ class ServiceProvider extends IlluminateServiceProvider {
         {
             $app['helpers.loaded'] = true;
 
-            return new Helpers(
-                                    $app['helpers.config'],
-                                    $app['helpers.repository.manager']
-                                );
-        });
-    }
-
-    public function registerRepositories()
-    {
-        $this->app['helpers.repository.manager'] = $this->app->share(function($app)
-        {
-            return new RepositoryManager(
-                                            $app['helpers.config'],
-                                            new RepositoryExample(new ModelExample)
-                                        );
+            return new Helpers($app['helpers.config']);
         });
     }
 
