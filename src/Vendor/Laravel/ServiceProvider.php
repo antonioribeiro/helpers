@@ -10,13 +10,13 @@ use Illuminate\Foundation\AliasLoader as IlluminateAliasLoader;
 
 class ServiceProvider extends PragmaRXServiceProvider {
 
-    public $packageVendor = 'pragmarx';
-    public $packageVendorCapitalized = 'PragmaRX';
+    protected $packageVendor = 'pragmarx';
+    protected $packageVendorCapitalized = 'PragmaRX';
 
-    public $packageName = 'helpers';
-    public $packageNameCapitalized = 'Helpers';
+    protected $packageName = 'helpers';
+    protected $packageNameCapitalized = 'Helpers';
 
-    public $packageNamespace = 'pragmarx/helpers';
+    protected $packageNamespace = 'pragmarx/helpers';
 
     /**
      * Register the service provider.
