@@ -16,7 +16,8 @@
     ],
 
     "require": {
-        "php": ">=5.3.7"
+        "php": ">=5.3.7",
+        "pragmarx/support": "dev-master"
     },
 
     "require-dev": {
