@@ -20,6 +20,13 @@
         "pragmarx/support": "dev-master"
     },
 
+    "repositories": [
+        {
+            "type": "vcs",
+            "url":  "https://github.com/antonioribeiro/support.git"
+        }
+    ],
+    
     "require-dev": {
         "mockery/mockery": "0.8.0"
     },
