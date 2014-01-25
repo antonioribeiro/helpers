@@ -1,12 +1,29 @@
-<?php namespace PragmaRX\Helpers\Vendor\Laravel;
+<?php 
+ 
+/**
+ * Part of the Helpers package.
+ *
+ * NOTICE OF LICENSE
+ *
+ * Licensed under the 3-clause BSD License.
+ *
+ * This source file is subject to the 3-clause BSD License that is
+ * bundled with this package in the LICENSE file.  It is also available at
+ * the following URL: http://www.opensource.org/licenses/BSD-3-Clause
+ *
+ * @package    Helpers
+ * @version    1.0.0
+ * @author     Antonio Carlos Ribeiro @ PragmaRX
+ * @license    BSD License (3-clause)
+ * @copyright  (c) 2013, PragmaRX
+ * @link       http://pragmarx.com
+ */
+
+namespace PragmaRX\Helpers\Vendor\Laravel;
  
 use PragmaRX\Helpers\Helpers;
 
-use PragmaRX\Helpers\Support\Config;
-
 use PragmaRX\Support\ServiceProvider as PragmaRXServiceProvider;
-
-use Illuminate\Foundation\AliasLoader as IlluminateAliasLoader;
 
 class ServiceProvider extends PragmaRXServiceProvider {
 
@@ -54,6 +71,11 @@ class ServiceProvider extends PragmaRXServiceProvider {
 
             return new Helpers($app['helpers.config']);
         });
+    }
+
+    public function getRootDirectory()
+    {
+        return __DIR__.'/../..';
     }
 
 }
